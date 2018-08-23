@@ -10,7 +10,15 @@ class Homepage extends React.Component {
 
 handleInput = (e) => {
   console.log(e.target.value);
-  
+  this.setState({moneyAdded: e.target.value})
+}
+
+updateInputValue = (e) => {
+  e.preventDefault()
+  let currentBalance = this.state.total
+  let inputAmount = this.state.moneyAdded
+  let newTotal = currentBalance + inputAmount
+  this.setState({total: newTotal})
 }
 
   render(){
