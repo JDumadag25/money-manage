@@ -2,18 +2,25 @@ import React from 'react'
 
 class Homepage extends React.Component {
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("hello");
+  state = {
+    total: 0,
+    moneyAdded: '',
+    newBalance: '',
   }
+
+handleInput = (e) => {
+  console.log(e.target.value);
+  
+}
 
   render(){
     return(
       <div>
       Add money to your Bank
-      <form onSubmit={this.handleSubmit}>
-        <input type='number'></input>
+      <form onSubmit={this.updateInputValue}>
+        <input type='number' onChange={this.handleInput}></input>
       </form>
+      {this.state.total}
       </div>
 
     )
