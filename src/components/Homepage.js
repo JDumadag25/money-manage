@@ -17,7 +17,7 @@ updateInputValue = (e) => {
   e.preventDefault()
   let currentBalance = this.state.total
   let inputAmount = this.state.moneyAdded
-  let newTotal = currentBalance + inputAmount
+  let newTotal = parseInt(currentBalance) + parseInt(inputAmount)
   this.setState({total: newTotal})
 }
 
