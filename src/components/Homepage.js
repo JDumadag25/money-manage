@@ -1,4 +1,5 @@
 import React from 'react'
+import Bills from './Bills'
 
 class Homepage extends React.Component {
 
@@ -24,12 +25,16 @@ updateInputValue = (e) => {
   render(){
     return(
       <div>
-      Add money to your Bank
-      <form onSubmit={this.updateInputValue}>
-        <input type='number' onChange={this.handleInput}></input>
-      </form>
-      {this.state.total}
+        <div>
+        Add money to your Bank
+        <form onSubmit={this.updateInputValue}>
+          <input type='number' onChange={this.handleInput}></input>
+        </form>
+        {this.state.total}
+        </div>
+        <Bills/>
       </div>
+
 
     )
   }
