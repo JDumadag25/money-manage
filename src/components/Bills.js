@@ -17,6 +17,7 @@ class Bills extends React.Component{
         <input type='number'></input>
         <button onClick={this.enterBills}></button>
       </div>
+
     )
   }
 }
