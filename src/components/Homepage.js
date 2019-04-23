@@ -16,6 +16,7 @@ handleInput = (e) => {
 
 updateInputValue = (e) => {
   e.preventDefault()
+  document.getElementById('money-added').reset();
   let currentBalance = this.state.total
   let inputAmount = this.state.moneyAdded
   let newTotal = parseInt(currentBalance) + parseInt(inputAmount)
@@ -27,7 +28,7 @@ updateInputValue = (e) => {
       <div>
         <div>
         Add money to your Bank
-        <form onSubmit={this.updateInputValue}>
+        <form  id='money-added' onSubmit={this.updateInputValue}>
           <input type='number' onChange={this.handleInput}></input>
         </form>
         {this.state.total}

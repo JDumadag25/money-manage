@@ -14,8 +14,11 @@ class Bills extends React.Component{
     return(
       <div>
         <h5>Enter your bills for this month here:</h5>
+        <label>Name</label>
+        <input type='text'></input>
+        <label>Amount</label>
         <input type='number'></input>
-        <button onClick={this.enterBills}></button>
+        <button onClick={this.enterBills}>ENTER</button>
       </div>
 
     )
