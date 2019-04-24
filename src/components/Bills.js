@@ -20,10 +20,12 @@ class Bills extends React.Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
-    let newname = this.state.name
-    let newamount = this.state.amount
-    let newbill = {newname : newamount}
-    console.log(newbill);
+    let newBill = {}
+    let newName = this.state.name
+    let newAmount = this.state.amount
+    newBill[newName] = this.state.amount
+    console.log(this.state.name);
+    console.log(newBill);
   }
 
   render(){
