@@ -3,7 +3,7 @@ import React from 'react'
 class Bills extends React.Component{
 
   state = {
-    bills:{},
+    bills:[],
     name:'',
     amount:''
   }
@@ -24,8 +24,11 @@ class Bills extends React.Component{
     let newName = this.state.name
     let newAmount = this.state.amount
     newBill[newName] = this.state.amount
-    console.log(this.state.name);
     console.log(newBill);
+    this.setState({
+      bills: [...this.state.bills, newBill]
+    })
+    console.log(this.state.bills);
   }
 
   render(){
