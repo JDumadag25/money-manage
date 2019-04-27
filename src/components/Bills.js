@@ -18,21 +18,25 @@ class Bills extends React.Component{
    })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
     let newBill = {}
     let newName = this.state.name
     let newAmount = this.state.amount
     newBill[newName] = this.state.amount
     console.log(newBill);
-    this.setState({
+    await this.setState({
       bills: [...this.state.bills, newBill]
     })
     console.log(this.state.bills);
   }
 
   render(){
+
+    
+
     return(
+    <div>
       <div>
         <h5>Enter your bills for this month here:</h5>
         <form onSubmit={this.handleSubmit}>
@@ -45,6 +49,10 @@ class Bills extends React.Component{
           <button onClick={this.enterBills}>ENTER</button>
         </form>
       </div>
+      <div>
+        <h2>Show bills</h2>
+      </div>
+    </div>
 
     )
   }
