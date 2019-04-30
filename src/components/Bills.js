@@ -3,8 +3,11 @@ import React from 'react'
 class Bills extends React.Component{
   render(){
     console.log(this.props.bills);
+    const bills = this.props.bills.map(bill => {
+      console.log(bill);
+    })
     return(
-      <h3>Hello</h3>
+      <h4>hello</h4>
     )
   }
 }
