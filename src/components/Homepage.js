@@ -1,5 +1,5 @@
 import React from 'react'
-import Bills from './Bills'
+import BillsForm from './BillsForm'
 
 class Homepage extends React.Component {
 
@@ -33,7 +33,7 @@ updateInputValue = (e) => {
         </form>
         {this.state.total}
         </div>
-        <Bills/>
+        <BillsForm/>
       </div>
 
 
