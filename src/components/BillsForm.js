@@ -19,13 +19,11 @@ class BillsForm extends React.Component{
    })
   }
 
-  handleSubmit = async (e) => {
+  handleSubmit =  async (e) => {
     e.preventDefault()
     let newBill = {}
-    let newName = this.state.name
-    let newAmount = this.state.amount
-    newBill[newName] = this.state.amount
-    console.log(newBill);
+    newBill.name = this.state.name
+    newBill.amount = this.state.amount
     await this.setState({
       bills: [...this.state.bills, newBill]
     })
