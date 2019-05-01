@@ -4,10 +4,12 @@ class Bills extends React.Component{
   render(){
     console.log(this.props.bills);
     const bills = this.props.bills.map(bill => {
-      console.log(bill);
+      return <ul>{bill.name} - ${bill.amount}</ul>
     })
     return(
-      <h4>hello</h4>
+    <div>
+      {bills}
+    </div>
     )
   }
 }
