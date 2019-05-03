@@ -6,7 +6,8 @@ class BillsForm extends React.Component{
   state = {
     bills:[],
     name:'',
-    amount:''
+    amount:'',
+    newTotal: 0
   }
 
   enterBills = () => {
@@ -25,14 +26,13 @@ class BillsForm extends React.Component{
     newBill.name = this.state.name
     newBill.amount = this.state.amount
     await this.setState({
-      bills: [...this.state.bills, newBill]
+      bills: [...this.state.bills, newBill],
+      newTotal: this.props.total - this.state.amount
     })
-    console.log(this.state.bills);
+
   }
 
   render(){
-
-
 
     return(
     <div>
@@ -49,7 +49,7 @@ class BillsForm extends React.Component{
         </form>
       </div>
       <div>
-        <Bills bills={this.state.bills}/>
+        <Bills bills={this.state.bills} total={this.state.newTotal}/>
       </div>
     </div>
 

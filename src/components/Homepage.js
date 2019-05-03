@@ -33,7 +33,7 @@ updateInputValue = (e) => {
         </form>
         {this.state.total}
         </div>
-        <BillsForm/>
+        <BillsForm total={this.state.total}/>
       </div>
 
 
