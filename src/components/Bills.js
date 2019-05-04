@@ -9,10 +9,16 @@ class Bills extends React.Component{
       return <ul>{bill.name} - ${bill.amount}</ul>
     })
 
+    const billTotal = this.props.bills.map(bill => {
+      let total = 0
+      let amount = parseInt(bill.amount)
+      return total += amount
+    })
+
     return(
     <div>
-      {this.props.total}
       {bills}
+      {billTotal}
     </div>
     )
   }
