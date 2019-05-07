@@ -18,7 +18,8 @@ class Bills extends React.Component{
     return(
     <div>
       {bills}
-      {billTotal}
+      {billTotal}<br></br>
+    {parseInt(this.props.totalAmount)}
     </div>
     )
   }

@@ -7,7 +7,8 @@ class BillsForm extends React.Component{
     bills:[],
     name:'',
     amount:'',
-    newTotal: 0
+    newTotal: 0,
+    totalAmount:0
   }
 
   enterBills = () => {
@@ -26,7 +27,8 @@ class BillsForm extends React.Component{
     newBill.name = this.state.name
     newBill.amount = this.state.amount
     await this.setState({
-      bills: [...this.state.bills, newBill]
+      bills: [...this.state.bills, newBill],
+      totalAmount: this.state.totalAmount + this.state.amount
     })
 
   }
@@ -38,17 +40,17 @@ class BillsForm extends React.Component{
       <div>
         <h5>Enter your bills for this month here:</h5>
         <form onSubmit={this.handleSubmit}>
-          <label>Name
+          <label>Name:
           <input type='text' name='name' onChange={this.handleChange}></input>
           </label>
-          <label>Amount
+          <label>Amount:
           <input type='number' name='amount' onChange={this.handleChange}></input>
           </label>
           <button onClick={this.enterBills}>ENTER</button>
         </form>
       </div>
       <div>
-        <Bills bills={this.state.bills}/>
+        <Bills bills={this.state.bills} totalAmount={this.state.totalAmount}/>
       </div>
     </div>
 
